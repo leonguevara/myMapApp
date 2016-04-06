@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="myMapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v0V-fz-fQH">
+                                <rect key="frame" x="-8" y="20" width="391" height="545"/>
+                            </mapView>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDz-Lc-STL">
+                                <rect key="frame" x="161" y="573" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nyY-bu-gju"/>
+                                    <constraint firstAttribute="width" constant="52" id="srR-yU-ib9"/>
+                                </constraints>
+                                <state key="normal" title="Satélite"/>
+                                <connections>
+                                    <action selector="cambiarVista:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKj-li-nNo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP6-xy-l91">
+                                <rect key="frame" x="14" y="573" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="tzp-HS-9l0"/>
+                                    <constraint firstAttribute="height" constant="30" id="v4P-t7-Jun"/>
+                                </constraints>
+                                <state key="normal" title="Normal"/>
+                                <connections>
+                                    <action selector="cambiarVista:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O64-vY-QUg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiF-Wm-VSY">
+                                <rect key="frame" x="308" y="573" width="51" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ccz-bl-bzY"/>
+                                    <constraint firstAttribute="width" constant="51" id="u8T-mQ-FOO"/>
+                                </constraints>
+                                <state key="normal" title="Híbrido"/>
+                                <connections>
+                                    <action selector="cambiarVista:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9e-2q-ihG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v0V-fz-fQH" secondAttribute="bottom" constant="102" id="6XE-Xz-SlW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v0V-fz-fQH" secondAttribute="trailing" constant="-24" id="Ik1-0A-afY"/>
+                            <constraint firstItem="v0V-fz-fQH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="Qpi-Pn-woD"/>
+                            <constraint firstItem="FP6-xy-l91" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-2" id="Ryb-5O-bEd"/>
+                            <constraint firstItem="lDz-Lc-STL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vct-qy-KhS"/>
+                            <constraint firstItem="lDz-Lc-STL" firstAttribute="top" secondItem="v0V-fz-fQH" secondAttribute="bottom" constant="8" id="bot-nU-76k"/>
+                            <constraint firstItem="v0V-fz-fQH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fHn-nw-uhX"/>
+                            <constraint firstItem="MiF-Wm-VSY" firstAttribute="top" secondItem="v0V-fz-fQH" secondAttribute="bottom" constant="8" id="iES-U6-foH"/>
+                            <constraint firstItem="FP6-xy-l91" firstAttribute="top" secondItem="v0V-fz-fQH" secondAttribute="bottom" constant="8" id="jTF-2t-Fbk"/>
+                            <constraint firstItem="MiF-Wm-VSY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tZg-WZ-4AF"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapa" destination="v0V-fz-fQH" id="EH5-kD-IaQ"/>
+                        <outlet property="vistaHíbrida" destination="MiF-Wm-VSY" id="QfU-dt-XlS"/>
+                        <outlet property="vistaSatélite" destination="lDz-Lc-STL" id="spc-Po-t1y"/>
+                        <outletCollection property="vistaNormal" destination="FP6-xy-l91" collectionClass="NSMutableArray" id="lzf-Ui-VyJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="308.5"/>
         </scene>
     </scenes>
 </document>
