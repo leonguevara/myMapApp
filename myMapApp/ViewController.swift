@@ -55,9 +55,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             anotarEnElMapa()
         } else {
             let distanciaActual = userLocation.distanceFromLocation(posicion)
-            let distanciaEntera = floor(distanciaActual)
-            if distanciaEntera >= 50 {
-                distancia += 50
+            if distanciaActual >= 50 {
+                distancia += distanciaActual
                 posicion = userLocation
                 anotarEnElMapa()
             }
