@@ -22,7 +22,9 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescripcion</key>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Necesario saber siempre en dónde estás ubicado</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Necesario para poder ubicar tu posición en el mapa</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

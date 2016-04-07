@@ -72,9 +72,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapa" destination="v0V-fz-fQH" id="EH5-kD-IaQ"/>
-                        <outlet property="vistaHíbrida" destination="MiF-Wm-VSY" id="QfU-dt-XlS"/>
-                        <outlet property="vistaSatélite" destination="lDz-Lc-STL" id="spc-Po-t1y"/>
-                        <outletCollection property="vistaNormal" destination="FP6-xy-l91" collectionClass="NSMutableArray" id="lzf-Ui-VyJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
